@@ -6,7 +6,12 @@ import { Navbar } from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "OpoInfantil Pinoso · Preparación Integral Técnico de Educación Infantil",
   description:
-    "Plataforma de estudio de alto rendimiento para la oposición de Técnico de Educación Infantil del Ayuntamiento de Pinoso (Expediente 1584675N). 25 temas completos, simuladores de los 3 ejercicios oficiales y seguimiento de notas."
+    "Plataforma de estudio de alto rendimiento para la oposición de Técnico de Educación Infantil del Ayuntamiento de Pinoso (Expediente 1584675N). 25 temas completos, simuladores de los 3 ejercicios oficiales y seguimiento de notas.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+    apple: ["/icon.svg"]
+  }
 };
 
 export default function RootLayout({
