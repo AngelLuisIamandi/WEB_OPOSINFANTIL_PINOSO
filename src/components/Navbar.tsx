@@ -13,7 +13,9 @@ import {
   GraduationCap,
   LayoutDashboard,
   Menu,
+  Moon,
   Sparkles,
+  Sun,
   TrendingUp,
   X
 } from "lucide-react";
@@ -24,6 +26,24 @@ export function Navbar() {
   const pathname = usePathname();
   const { state } = useProgress();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const nextDark = !root.classList.contains("dark");
+    if (nextDark) {
+      root.classList.add("dark");
+      localStorage.setItem("opo_theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("opo_theme", "light");
+    }
+    setIsDark(nextDark);
+  };
 
   // Close mobile drawer on route change
   useEffect(() => {
@@ -151,8 +171,23 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Status & Mobile Trigger */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Right Status, Theme Toggle & Mobile Trigger */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Theme Toggle Button (Light / Dark) */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50/80 text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+              aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+            >
+              {isDark ? (
+                <Sun className="h-4 w-4 text-amber-400" />
+              ) : (
+                <Moon className="h-4 w-4 text-indigo-600" />
+              )}
+            </button>
+
             {/* Progress pill */}
             <Link
               href="/estadisticas"

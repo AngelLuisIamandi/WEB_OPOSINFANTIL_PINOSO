@@ -1,11 +1,275 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
+  html:not(.dark) {
+    color-scheme: light;
+  }
+
+  html:not(.dark) body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+  }
+
   body {
     background-color: #f8fafc;
     color: #0f172a;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
+
+  html.dark body {
+    background-color: #0b1120 !important;
+    color: #f1f5f9 !important;
+  }
+}
+
+/* Global Dark Mode Semantic Overrides for all Cards, Surfaces, Tables, Inputs & Badges */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Main surfaces & cards */
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/50,
+html.dark .bg-slate-50\/60,
+html.dark .bg-slate-50\/70,
+html.dark .bg-slate-50\/80 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/95,
+html.dark .bg-white\/90,
+html.dark .bg-white\/85,
+html.dark .bg-white\/80 {
+  background-color: #1e293b !important;
+}
+
+/* Keep hero white CTA button bright & readable */
+html.dark .hero-cta-light {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.dark .bg-slate-100,
+html.dark .bg-slate-100\/90,
+html.dark .bg-slate-200,
+html.dark .bg-slate-200\/80 {
+  background-color: #334155 !important;
+}
+
+/* Tinted semantic backgrounds in dark mode */
+html.dark .bg-indigo-50,
+html.dark .bg-indigo-50\/80,
+html.dark .bg-indigo-50\/70,
+html.dark .bg-indigo-50\/60,
+html.dark .bg-indigo-50\/50,
+html.dark .bg-indigo-50\/30,
+html.dark .bg-indigo-100 {
+  background-color: rgba(99, 102, 241, 0.16) !important;
+}
+
+html.dark .bg-violet-50,
+html.dark .bg-violet-50\/70 {
+  background-color: rgba(139, 92, 246, 0.16) !important;
+}
+
+html.dark .bg-emerald-50,
+html.dark .bg-emerald-50\/90,
+html.dark .bg-emerald-50\/80,
+html.dark .bg-emerald-50\/70,
+html.dark .bg-emerald-50\/60,
+html.dark .bg-emerald-50\/30,
+html.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+html.dark .bg-amber-50,
+html.dark .bg-amber-50\/70,
+html.dark .bg-amber-50\/60,
+html.dark .bg-amber-50\/40,
+html.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+}
+
+html.dark .bg-rose-50,
+html.dark .bg-rose-50\/90,
+html.dark .bg-rose-50\/80,
+html.dark .bg-rose-50\/70,
+html.dark .bg-rose-50\/30,
+html.dark .bg-rose-100 {
+  background-color: rgba(244, 63, 94, 0.15) !important;
+}
+
+html.dark .bg-sky-50 {
+  background-color: rgba(14, 165, 233, 0.16) !important;
+}
+
+/* Soft Gradients in Dark Mode */
+html.dark .from-indigo-50\/70,
+html.dark .from-indigo-50\/50 {
+  --tw-gradient-from: rgba(79, 70, 229, 0.18) !important;
+}
+html.dark .from-violet-50\/70 {
+  --tw-gradient-from: rgba(124, 58, 237, 0.18) !important;
+}
+html.dark .from-amber-50\/70 {
+  --tw-gradient-from: rgba(245, 158, 11, 0.16) !important;
+}
+html.dark .from-emerald-50\/90 {
+  --tw-gradient-from: rgba(16, 185, 129, 0.18) !important;
+}
+html.dark .from-rose-50\/90 {
+  --tw-gradient-from: rgba(244, 63, 94, 0.18) !important;
+}
+html.dark .to-white,
+html.dark .to-indigo-50\/40,
+html.dark .to-orange-50\/40,
+html.dark .to-orange-50\/60,
+html.dark .to-teal-50\/60 {
+  --tw-gradient-to: #1e293b !important;
+}
+
+/* Text colors in Dark Mode */
+html.dark .text-slate-950,
+html.dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-indigo-950,
+html.dark .text-indigo-900,
+html.dark .text-indigo-800,
+html.dark .text-indigo-700,
+html.dark .text-indigo-600 {
+  color: #a5b4fc !important;
+}
+
+html.dark .text-violet-900,
+html.dark .text-violet-800,
+html.dark .text-violet-700,
+html.dark .text-violet-600 {
+  color: #c4b5fd !important;
+}
+
+html.dark .text-emerald-950,
+html.dark .text-emerald-900,
+html.dark .text-emerald-800,
+html.dark .text-emerald-700,
+html.dark .text-emerald-600 {
+  color: #6ee7b7 !important;
+}
+
+html.dark .text-amber-900,
+html.dark .text-amber-800,
+html.dark .text-amber-700,
+html.dark .text-amber-600 {
+  color: #fcd34d !important;
+}
+
+html.dark .text-rose-950,
+html.dark .text-rose-900,
+html.dark .text-rose-800,
+html.dark .text-rose-700,
+html.dark .text-rose-600 {
+  color: #fda4af !important;
+}
+
+html.dark .text-sky-800,
+html.dark .text-sky-700 {
+  color: #7dd3fc !important;
+}
+
+/* Borders & Dividers in Dark Mode */
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-200\/70,
+html.dark .border-slate-300 {
+  border-color: #334155 !important;
+}
+
+html.dark .divide-slate-100 > :not(:last-child),
+html.dark .divide-slate-200 > :not(:last-child) {
+  border-color: #334155 !important;
+}
+
+html.dark .border-indigo-100,
+html.dark .border-indigo-200,
+html.dark .border-indigo-300 {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+html.dark .border-violet-200,
+html.dark .border-violet-300 {
+  border-color: rgba(139, 92, 246, 0.35) !important;
+}
+
+html.dark .border-emerald-200,
+html.dark .border-emerald-300 {
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+html.dark .border-amber-200,
+html.dark .border-amber-200\/80,
+html.dark .border-amber-300 {
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+html.dark .border-rose-200,
+html.dark .border-rose-400 {
+  border-color: rgba(244, 63, 94, 0.4) !important;
+}
+
+html.dark .border-sky-200 {
+  border-color: rgba(14, 165, 233, 0.35) !important;
+}
+
+/* Form controls (inputs, selects, textareas) in Dark Mode */
+html.dark input:not([type="range"]):not([type="checkbox"]),
+html.dark select,
+html.dark textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Dark Buttons (bg-slate-900 in light mode becomes indigo/slate button in dark mode so it stands out against dark cards) */
+html.dark .bg-slate-900 {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+html.dark .bg-slate-900:hover {
+  background-color: #4338ca !important;
+}
+
+/* Keep hero white CTA buttons bright & high-contrast in Dark Mode */
+html.dark a.hero-cta-light,
+html.dark button.hero-cta-light {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+html.dark a.hero-cta-light:hover,
+html.dark button.hero-cta-light:hover {
+  background-color: #e0e7ff !important;
+  color: #1e1b4b !important;
 }
 
 @media print {
@@ -14,5 +278,6 @@
   }
   body {
     background-color: #ffffff !important;
+    color: #000000 !important;
   }
 }

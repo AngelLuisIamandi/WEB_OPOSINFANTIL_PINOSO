@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="pt-2 flex flex-wrap gap-3">
               <Link
                 href="/temario"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-900 shadow-sm hover:bg-indigo-50 transition-colors"
+                className="hero-cta-light inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-900 shadow-sm hover:bg-indigo-50 transition-colors"
               >
                 <BookOpen className="h-4 w-4 text-indigo-600" />
                 Estudiar los 25 Temas

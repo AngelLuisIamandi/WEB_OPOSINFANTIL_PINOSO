@@ -434,7 +434,7 @@ function TopicDetailContent() {
                     setActiveTab("test");
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-indigo-900 shadow-sm hover:bg-indigo-50 cursor-pointer"
+                  className="hero-cta-light inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-indigo-900 shadow-sm hover:bg-indigo-50 cursor-pointer"
                 >
                   Hacer Cuestionario del Tema →
                 </button>
