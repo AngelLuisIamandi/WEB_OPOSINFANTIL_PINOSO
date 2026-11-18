@@ -11,6 +11,7 @@ import {
   FileText,
   Flame,
   GraduationCap,
+  Landmark,
   LayoutDashboard,
   Menu,
   Moon,
@@ -79,6 +80,13 @@ export function Navbar() {
       icon: CheckSquare
     },
     {
+      href: "/examenes-oficiales",
+      label: "Reales PDF",
+      shortLabel: "PDFs",
+      badge: "4",
+      icon: Landmark
+    },
+    {
       href: "/segundo-ejercicio",
       label: "Desarrollo",
       shortLabel: "2º Tema",
@@ -94,7 +102,7 @@ export function Navbar() {
     },
     {
       href: "/estadisticas",
-      label: "Notas y Progreso",
+      label: "Progreso",
       shortLabel: "Notas",
       badge: failedCount > 0 ? `${failedCount}` : null,
       badgeAlert: failedCount > 0,
@@ -123,7 +131,7 @@ export function Navbar() {
                   10/10
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 hidden sm:block lg:hidden xl:block">
+              <p className="text-[11px] text-slate-500 hidden sm:block lg:hidden 2xl:block">
                 Técnico/a E. Infantil · Exp. 1584675N
               </p>
             </div>
@@ -141,21 +149,23 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 xl:px-3 py-1.5 text-xs font-bold transition-all ${
+                  className={`relative flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-bold transition-all ${
                     isActive
                       ? "bg-white text-indigo-700 shadow-xs ring-1 ring-slate-200/80"
                       : "text-slate-600 hover:bg-white/60 hover:text-slate-900"
                   }`}
                 >
                   <Icon
-                    className={`h-3.5 w-3.5 xl:h-4 xl:w-4 shrink-0 ${
+                    className={`h-3.5 w-3.5 shrink-0 ${
                       isActive ? "text-indigo-600" : "text-slate-500"
                     }`}
                   />
                   <span>{item.label}</span>
                   {item.badge && (
                     <span
-                      className={`rounded-md px-1.5 py-0.5 text-[10px] font-extrabold leading-none ${
+                      className={`${
+                        item.badgeAlert ? "inline-block" : "hidden 2xl:inline-block"
+                      } rounded-md px-1.5 py-0.5 text-[10px] font-extrabold leading-none ${
                         item.badgeAlert
                           ? "bg-amber-100 text-amber-800 border border-amber-300"
                           : isActive
@@ -357,7 +367,7 @@ export function Navbar() {
         aria-label="Navegación inferior móvil"
         className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur-md lg:hidden no-print shadow-[0_-2px_10px_rgba(15,23,42,0.06)]"
       >
-        <div className="mx-auto grid max-w-md grid-cols-6 px-1 py-1.5">
+        <div className="mx-auto grid max-w-md grid-cols-7 px-1 py-1.5">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = isRouteActive(item.href);

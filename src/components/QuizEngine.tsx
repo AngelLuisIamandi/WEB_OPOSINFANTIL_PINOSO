@@ -342,8 +342,9 @@ export function QuizEngine({
                   {isCurrentReserve ? " (RESERVA)" : ""}
                 </span>
                 <span className="inline-flex items-center rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700">
-                  Tema {currentQuestion.topicId}
-                  {currentTopic ? `: ${currentTopic.title}` : ""}
+                  {currentQuestion.topicId > 0
+                    ? `Tema ${currentQuestion.topicId}${currentTopic ? `: ${currentTopic.title}` : ""}`
+                    : currentQuestion.reference}
                 </span>
                 <span
                   className={`inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-semibold uppercase ${
@@ -518,7 +519,7 @@ export function QuizEngine({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <span className="text-xs font-bold text-slate-600">
-                          #{idx + 1} · Tema {q.topicId}
+                          #{idx + 1} · {q.topicId > 0 ? `Tema ${q.topicId}` : q.reference}
                           {isOfficialPinoso && idx >= 20 ? " (Reserva)" : ""}
                         </span>
                         <span

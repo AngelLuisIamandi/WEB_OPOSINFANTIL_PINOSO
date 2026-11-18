@@ -7,6 +7,7 @@ import { temas18a21 } from "./temas-18-21";
 import { temas22a25 } from "./temas-22-25";
 import { supuestosPracticos } from "./supuestos-practicos";
 import { BASES_PINOSO } from "./bases-pinoso";
+import { EXAMENES_OFICIALES_ESPANA, OfficialPastExam } from "./examenes-oficiales";
 
 export const ALL_TOPICS: Topic[] = [
   ...temas1a5,
@@ -44,5 +45,5 @@ export function shuffleArray<T>(items: T[]): T[] {
   return copy;
 }
 
-export { supuestosPracticos, BASES_PINOSO };
-export type { PracticalCase };
+export { supuestosPracticos, BASES_PINOSO, EXAMENES_OFICIALES_ESPANA };
+export type { PracticalCase, OfficialPastExam };
