@@ -277,12 +277,12 @@ export default function HomePage() {
       {/* Quick Access to Syllabus Blocks */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700 font-bold">
+          <div className="flex items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-10 min-w-11 shrink-0 px-2.5 items-center justify-center rounded-xl bg-sky-50 text-sky-700 text-xs sm:text-sm font-extrabold whitespace-nowrap">
                 1-9
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-bold text-slate-900 text-lg">
                   Bloque I: Temario General (9 Temas)
                 </h3>
@@ -294,7 +294,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/temario?bloque=general"
-              className="text-xs font-bold text-sky-700 hover:underline"
+              className="shrink-0 whitespace-nowrap text-xs font-bold text-sky-700 hover:underline"
             >
               Ver los 9 temas →
             </Link>
@@ -339,12 +339,12 @@ export default function HomePage() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-700 font-bold">
+          <div className="flex items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-10 min-w-12 shrink-0 px-2.5 items-center justify-center rounded-xl bg-violet-50 text-violet-700 text-xs sm:text-sm font-extrabold whitespace-nowrap">
                 10-25
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-bold text-slate-900 text-lg">
                   Bloque II: Temario Específico (16 Temas)
                 </h3>
@@ -356,7 +356,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/temario?bloque=especifico"
-              className="text-xs font-bold text-violet-700 hover:underline"
+              className="shrink-0 whitespace-nowrap text-xs font-bold text-violet-700 hover:underline"
             >
               Ver los 16 temas →
             </Link>
@@ -404,14 +404,14 @@ export default function HomePage() {
       {/* Interactive Calculator for Fase de Concurso (30 points) & Official Functions */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-7 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <Calculator className="h-5 w-5 text-indigo-600" />
+          <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <Calculator className="h-5 w-5 text-indigo-600 shrink-0" />
               <h3 className="font-bold text-slate-900 text-lg">
                 Calculadora Oficial de Méritos · Fase de Concurso (Máx. 30 pts)
               </h3>
             </div>
-            <span className="rounded-xl bg-indigo-50 px-3 py-1 text-sm font-extrabold text-indigo-700">
+            <span className="shrink-0 whitespace-nowrap rounded-xl bg-indigo-50 px-3 py-1.5 text-sm font-extrabold text-indigo-700">
               {totalConcurso.toFixed(2)} / 30,00 pts
             </span>
           </div>
